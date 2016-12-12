@@ -13,7 +13,7 @@ build_script:
 test_script:
 - cmd: dotnet test ValidDotNet.Tests.Unit\
 artifacts:
-- path: ValidDotNet\bin\Debug\*.nupkg
+- path: ValidDotNet\bin\Release\*.nupkg
   name: nuget
 deploy:
 - provider: NuGet
