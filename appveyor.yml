@@ -9,7 +9,7 @@ build_script:
 
     dotnet build **/project.json
 
-    dotnet pack ValidDotNet --version-suffix "{build}"
+    dotnet pack ValidDotNet --version-suffix  $(appveyor_build_version)
 test_script:
 - cmd: dotnet test ValidDotNet.Tests.Unit\
 artifacts:
