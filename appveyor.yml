@@ -1,4 +1,4 @@
-version: 0.1.0-{build}
+version: 0.1.{build}
 branches:
   only:
   - master
@@ -7,9 +7,9 @@ build_script:
 - cmd: >-
     dotnet restore
 
-    dotnet build **/project.json
+    dotnet build **/project.json -c Release
 
-    dotnet pack ValidDotNet --version-suffix  $(APPVEYOR_BUILD_NUMBER)
+    dotnet pack ValidDotNet -c Release
 test_script:
 - cmd: dotnet test ValidDotNet.Tests.Unit\
 artifacts:
