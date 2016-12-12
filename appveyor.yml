@@ -9,7 +9,7 @@ build_script:
 
     dotnet build **/project.json -c Release
 
-    dotnet pack ValidDotNet -c Release
+    dotnet pack ValidDotNet -c Release --version-suffix %APPVEYOR_BUILD_NUMBER%
 test_script:
 - cmd: dotnet test ValidDotNet.Tests.Unit\
 artifacts:
