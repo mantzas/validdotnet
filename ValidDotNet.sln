@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ValidDotNet", "ValidDotNet\ValidDotNet.xproj", "{BB125A28-76DC-405A-A3FD-AEC22F4CD370}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ValidDotNet.Tests.Unit", "ValidDotNet.Tests.Unit\ValidDotNet.Tests.Unit.xproj", "{CD3FE0F3-E69D-4508-88EE-3EEC4FB0FAA4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB125A28-76DC-405A-A3FD-AEC22F4CD370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB125A28-76DC-405A-A3FD-AEC22F4CD370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB125A28-76DC-405A-A3FD-AEC22F4CD370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB125A28-76DC-405A-A3FD-AEC22F4CD370}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD3FE0F3-E69D-4508-88EE-3EEC4FB0FAA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD3FE0F3-E69D-4508-88EE-3EEC4FB0FAA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD3FE0F3-E69D-4508-88EE-3EEC4FB0FAA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD3FE0F3-E69D-4508-88EE-3EEC4FB0FAA4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
