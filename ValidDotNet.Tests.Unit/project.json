@@ -1,6 +1,6 @@
 {
   "title": "ValidDotNet.Tests.Unit",
-  "version": "1.1.0-*",
+  "version": "0.1.0-*",
   "buildOptions": {
     "debugType": "portable"
   },
@@ -10,7 +10,7 @@
     "FluentAssertions": "4.17.0",
     "xunit": "2.2.0-beta4-build3444",
     "System.Runtime.Serialization.Primitives": "4.3.0",
-    "ValidDotNet": "1.1.0-*"
+    "ValidDotNet": "0.1.0-*"
   },
   "tools": {
   },
