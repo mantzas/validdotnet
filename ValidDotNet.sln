@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ValidDotNet", "ValidDotNet\ValidDotNet.xproj", "{BB125A28-76DC-405A-A3FD-AEC22F4CD370}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidDotNet", "ValidDotNet\ValidDotNet.csproj", "{BB125A28-76DC-405A-A3FD-AEC22F4CD370}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ValidDotNet.Tests.Unit", "ValidDotNet.Tests.Unit\ValidDotNet.Tests.Unit.xproj", "{CD3FE0F3-E69D-4508-88EE-3EEC4FB0FAA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidDotNet.Tests.Unit", "ValidDotNet.Tests.Unit\ValidDotNet.Tests.Unit.csproj", "{CD3FE0F3-E69D-4508-88EE-3EEC4FB0FAA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
