@@ -13,17 +13,19 @@ namespace ValidDotNet.Tests.Unit
         [Fact]
         public void GenericClass_ThrowIfNull()
         {
-            Action act = () => ((object)null).ThrowIfNull("t");
+            Action act = () => ((object) null).ThrowIfNull("t");
             var result = act.ShouldThrow<ArgumentNullException>();
-            result.Subject.First().Message.Should().Be("Parameter is null!\r\nParameter name: t");
+            result.Subject.First()
+                .Message.Should()
+                .Be("Parameter is null!" + Environment.NewLine + "Parameter name: t");
         }
 
         [Fact]
         public void GenericClass_customMessage_ThrowIfNull()
         {
-            Action act = () => ((object)null).ThrowIfNull("t", "Message");
+            Action act = () => ((object) null).ThrowIfNull("t", "Message");
             var result = act.ShouldThrow<ArgumentNullException>();
-            result.Subject.First().Message.Should().Be("Message\r\nParameter name: t");
+            result.Subject.First().Message.Should().Be("Message" + Environment.NewLine + "Parameter name: t");
         }
 
         #endregion
@@ -35,7 +37,9 @@ namespace ValidDotNet.Tests.Unit
         {
             Action act = () => TimeSpan.Zero.ThrowIfZero("t");
             var result = act.ShouldThrow<ArgumentException>();
-            result.Subject.First().Message.Should().Be("Parameter is zero!\r\nParameter name: t");
+            result.Subject.First()
+                .Message.Should()
+                .Be("Parameter is zero!" + Environment.NewLine + "Parameter name: t");
         }
 
         [Fact]
@@ -43,7 +47,7 @@ namespace ValidDotNet.Tests.Unit
         {
             Action act = () => TimeSpan.Zero.ThrowIfZero("t", "Message");
             var result = act.ShouldThrow<ArgumentException>();
-            result.Subject.First().Message.Should().Be("Message\r\nParameter name: t");
+            result.Subject.First().Message.Should().Be("Message" + Environment.NewLine + "Parameter name: t");
         }
 
         #endregion
@@ -55,7 +59,9 @@ namespace ValidDotNet.Tests.Unit
         {
             Action act = () => string.Empty.ThrowIfNullOrWhitespace("t");
             var result = act.ShouldThrow<ArgumentException>();
-            result.Subject.First().Message.Should().Be("Parameter is null or whitespace!\r\nParameter name: t");
+            result.Subject.First()
+                .Message.Should()
+                .Be("Parameter is null or whitespace!" + Environment.NewLine + "Parameter name: t");
         }
 
         [Fact]
@@ -63,7 +69,7 @@ namespace ValidDotNet.Tests.Unit
         {
             Action act = () => string.Empty.ThrowIfNullOrWhitespace("t", "Message");
             var result = act.ShouldThrow<ArgumentException>();
-            result.Subject.First().Message.Should().Be("Message\r\nParameter name: t");
+            result.Subject.First().Message.Should().Be("Message" + Environment.NewLine + "Parameter name: t");
         }
 
         #endregion
@@ -75,7 +81,9 @@ namespace ValidDotNet.Tests.Unit
         {
             Action act = () => 0.ThrowIfLessOrEqual("t", 0);
             var result = act.ShouldThrow<ArgumentException>();
-            result.Subject.First().Message.Should().Be("Parameter is less or equal to 0!\r\nParameter name: t");
+            result.Subject.First()
+                .Message.Should()
+                .Be("Parameter is less or equal to 0!" + Environment.NewLine + "Parameter name: t");
         }
 
         [Fact]
@@ -83,7 +91,7 @@ namespace ValidDotNet.Tests.Unit
         {
             Action act = () => 0.ThrowIfLessOrEqual("t", 0, "Message");
             var result = act.ShouldThrow<ArgumentException>();
-            result.Subject.First().Message.Should().Be("Message\r\nParameter name: t");
+            result.Subject.First().Message.Should().Be("Message" + Environment.NewLine + "Parameter name: t");
         }
 
         #endregion
@@ -95,7 +103,9 @@ namespace ValidDotNet.Tests.Unit
         {
             Action act = () => CancellationToken.None.ThrowIfNone("t");
             var result = act.ShouldThrow<ArgumentException>();
-            result.Subject.First().Message.Should().Be("Parameter is none!\r\nParameter name: t");
+            result.Subject.First()
+                .Message.Should()
+                .Be("Parameter is none!" + Environment.NewLine + "Parameter name: t");
         }
 
         [Fact]
@@ -103,7 +113,7 @@ namespace ValidDotNet.Tests.Unit
         {
             Action act = () => CancellationToken.None.ThrowIfNone("t", "Message");
             var result = act.ShouldThrow<ArgumentException>();
-            result.Subject.First().Message.Should().Be("Message\r\nParameter name: t");
+            result.Subject.First().Message.Should().Be("Message" + Environment.NewLine + "Parameter name: t");
         }
 
         #endregion
