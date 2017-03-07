@@ -11,6 +11,13 @@ namespace ValidDotNet.Tests.Unit
         #region Generic as class
 
         [Fact]
+        public void GenericClass_ThrowIfNull_Returns()
+        {
+            var t = new { Name = "Test" };
+            t.ThrowIfNull("t").Should().Be(t);
+        }
+
+        [Fact]
         public void GenericClass_ThrowIfNull()
         {
             Action act = () => ((object) null).ThrowIfNull("t");
@@ -31,6 +38,13 @@ namespace ValidDotNet.Tests.Unit
         #endregion
 
         #region TimeSpan
+
+        [Fact]
+        public void TimeSpan_ThrowIfZero_Returns()
+        {
+            var t = TimeSpan.FromSeconds(1);
+            t.ThrowIfZero("t").Should().Be(t);
+        }
 
         [Fact]
         public void TimeSpan_ThrowIfZero()
@@ -55,6 +69,13 @@ namespace ValidDotNet.Tests.Unit
         #region String
 
         [Fact]
+        public void String_ThrowIfNullOrWhitespace_Returns()
+        {
+            var t = "Test";
+            t.ThrowIfNullOrWhitespace("t").Should().Be(t);
+        }
+
+        [Fact]
         public void String_ThrowIfNullOrWhitespace()
         {
             Action act = () => string.Empty.ThrowIfNullOrWhitespace("t");
@@ -77,6 +98,12 @@ namespace ValidDotNet.Tests.Unit
         #region int
 
         [Fact]
+        public void Int_ThrowIfLessOrEqual_Returns()
+        {
+            1.ThrowIfLessOrEqual("t", 0).Should().Be(1);
+        }
+
+        [Fact]
         public void Int_ThrowIfLessOrEqual()
         {
             Action act = () => 0.ThrowIfLessOrEqual("t", 0);
@@ -97,6 +124,13 @@ namespace ValidDotNet.Tests.Unit
         #endregion
 
         #region CancellationToken
+
+        [Fact]
+        public void CancellationToken_ThrowIfLessOrEqual_Returns()
+        {
+            var token = new CancellationTokenSource().Token;
+            token.ThrowIfNone("t").Should().Be(token);
+        }
 
         [Fact]
         public void CancellationToken_ThrowIfLessOrEqual()

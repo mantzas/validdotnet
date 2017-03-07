@@ -14,12 +14,14 @@ namespace ValidDotNet
         /// <param name="parameter">the actual parameter</param>
         /// <param name="parameterName">the name of the parameter</param>
         /// <param name="message">a optional message instead of the default</param>
-        public static void ThrowIfNull<T>(this T parameter, string parameterName, string message = null) where T : class
+        public static T ThrowIfNull<T>(this T parameter, string parameterName, string message = null) where T : class
         {
             if (parameter == null)
             {
                 throw new ArgumentNullException(parameterName, message ?? "Parameter is null!");
             }
+
+            return parameter;
         }
 
         /// <summary>
@@ -30,7 +32,7 @@ namespace ValidDotNet
         /// <param name="parameter">the actual parameter array</param>
         /// <param name="parameterName">the name of the parameter</param>
         /// <param name="message">a optional message instead of the default</param>
-        public static void ThrowIfNullOrEmpty<T>(this T[] parameter, string parameterName, string message = null) where T : class
+        public static T[] ThrowIfNullOrEmpty<T>(this T[] parameter, string parameterName, string message = null) where T : class
         {
             if (parameter == null)
             {
@@ -41,6 +43,8 @@ namespace ValidDotNet
             {
                 throw new ArgumentException("Parameter is empty!", parameterName);
             }
+
+            return parameter;
         }
 
         #endregion
@@ -53,12 +57,14 @@ namespace ValidDotNet
         /// <param name="parameter">the actual parameter</param>
         /// <param name="parameterName">the name of the parameter</param>
         /// <param name="message">a optional message instead of the default</param>
-        public static void ThrowIfZero(this TimeSpan parameter, string parameterName, string message = null)
+        public static TimeSpan ThrowIfZero(this TimeSpan parameter, string parameterName, string message = null)
         {
             if (parameter == TimeSpan.Zero)
             {
                 throw new ArgumentException(message ?? "Parameter is zero!", parameterName);
             }
+
+            return parameter;
         }
 
         #endregion
@@ -71,12 +77,14 @@ namespace ValidDotNet
         /// <param name="parameter">the actual parameter</param>
         /// <param name="parameterName">the name of the parameter</param>
         /// <param name="message">a optional message instead of the default</param>
-        public static void ThrowIfNullOrWhitespace(this string parameter, string parameterName, string message = null)
+        public static string ThrowIfNullOrWhitespace(this string parameter, string parameterName, string message = null)
         {
             if (string.IsNullOrWhiteSpace(parameter))
             {
                 throw new ArgumentException(message ?? "Parameter is null or whitespace!", parameterName);
             }
+
+            return parameter;
         }
 
         #endregion
@@ -90,12 +98,14 @@ namespace ValidDotNet
         /// <param name="parameterName">the name of the parameter</param>
         /// <param name="value">the value to check</param>
         /// <param name="message">a optional message instead of the default</param>
-        public static void ThrowIfLessOrEqual(this int parameter, string parameterName, int value, string message = null)
+        public static int ThrowIfLessOrEqual(this int parameter, string parameterName, int value, string message = null)
         {
             if (parameter <= value)
             {
                 throw new ArgumentException(message ?? string.Format("Parameter is less or equal to {0}!", value), parameterName);
             }
+
+            return parameter;
         }
 
         #endregion
@@ -108,12 +118,14 @@ namespace ValidDotNet
         /// <param name="parameter">the actual parameter</param>
         /// <param name="parameterName">the name of the parameter</param>
         /// <param name="message">a optional message instead of the default</param>
-        public static void ThrowIfNone(this CancellationToken parameter, string parameterName, string message = null)
+        public static CancellationToken ThrowIfNone(this CancellationToken parameter, string parameterName, string message = null)
         {
             if (parameter == CancellationToken.None)
             {
                 throw new ArgumentException(message ?? "Parameter is none!", parameterName);
             }
+
+            return parameter;
         }
 
         #endregion
