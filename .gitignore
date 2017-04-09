@@ -242,3 +242,5 @@ ModelManifest.xml
 .fake/
 /src/.cr
 /src/BDN.Generated
+*.ncrunchsolution
+*.ncrunchproject
