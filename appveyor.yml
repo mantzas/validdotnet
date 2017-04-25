@@ -1,4 +1,5 @@
 version: 0.2.{build}
+image: Visual Studio 2017
 branches:
   only:
   - master
@@ -7,11 +8,11 @@ build_script:
 - cmd: >-
     dotnet restore
 
-    dotnet build **/project.json -c Release
+    dotnet build -c Release
 
     dotnet pack ValidDotNet -c Release
 test_script:
-- cmd: dotnet test ValidDotNet.Tests.Unit\
+- cmd: dotnet test ValidDotNet.Tests.Unit\ValidDotNet.Tests.Unit.csproj
 artifacts:
 - path: ValidDotNet\bin\Release\*.nupkg
   name: nuget
