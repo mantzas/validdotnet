@@ -4,13 +4,21 @@ branches:
   only:
   - master
 configuration: Release
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
 build_script:
 - cmd: >-
     dotnet restore
 
     dotnet build -c Release
 
-    dotnet pack ValidDotNet -c Release -p:PackageVersion={version}
+    dotnet pack ValidDotNet -c Release
 test_script:
 - cmd: dotnet test ValidDotNet.Tests.Unit\ValidDotNet.Tests.Unit.csproj
 artifacts:
