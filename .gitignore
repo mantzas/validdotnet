@@ -244,3 +244,5 @@ ModelManifest.xml
 /src/BDN.Generated
 *.ncrunchsolution
 *.ncrunchproject
+
+.idea/

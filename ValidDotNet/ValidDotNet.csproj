@@ -1,16 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <Description>Validation Library</Description>
-    <AssemblyTitle>ValidDotNet</AssemblyTitle>
-    <VersionPrefix>0.2.0</VersionPrefix>
-    <TargetFramework>netstandard1.6</TargetFramework>
-    <AssemblyName>ValidDotNet</AssemblyName>
-    <PackageId>ValidDotNet</PackageId>
-    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
 
 </Project>
