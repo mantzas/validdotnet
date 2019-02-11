@@ -10,7 +10,7 @@ build_script:
 
     dotnet build -c Release
 
-    dotnet pack ValidDotNet -c Release
+    dotnet pack ValidDotNet -c Release -p:PackageVersion={version}
 test_script:
 - cmd: dotnet test ValidDotNet.Tests.Unit\ValidDotNet.Tests.Unit.csproj
 artifacts:
@@ -18,7 +18,7 @@ artifacts:
   name: nuget
 deploy:
 - provider: NuGet
-  server: https://www.nuget.org/api/v2/package
+  server: 
   api_key:
     secure: 5+SUZKFkrKpiGjy/Kv2igz+SC8vio1U5xVWRsQRVKqXgehgmTe/5SXBXlcFZsykJ
   skip_symbols: false
