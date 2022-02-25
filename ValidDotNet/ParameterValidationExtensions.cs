@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading;
-
-namespace ValidDotNet
+﻿namespace ValidDotNet
 {
     public static class ParameterValidationExtensions
     {
@@ -14,7 +11,7 @@ namespace ValidDotNet
         /// <param name="parameter">the actual parameter</param>
         /// <param name="parameterName">the name of the parameter</param>
         /// <param name="message">a optional message instead of the default</param>
-        public static T ThrowIfNull<T>(this T parameter, string parameterName, string message = null) where T : class
+        public static T ThrowIfNull<T>(this T parameter, string parameterName, string? message = null) where T : class?
         {
             if (parameter == null)
             {
@@ -32,7 +29,7 @@ namespace ValidDotNet
         /// <param name="parameter">the actual parameter array</param>
         /// <param name="parameterName">the name of the parameter</param>
         /// <param name="message">a optional message instead of the default</param>
-        public static T[] ThrowIfNullOrEmpty<T>(this T[] parameter, string parameterName, string message = null) where T : class
+        public static T[] ThrowIfNullOrEmpty<T>(this T[] parameter, string parameterName, string? message = null) where T : class
         {
             if (parameter == null)
             {
@@ -57,7 +54,7 @@ namespace ValidDotNet
         /// <param name="parameter">the actual parameter</param>
         /// <param name="parameterName">the name of the parameter</param>
         /// <param name="message">a optional message instead of the default</param>
-        public static TimeSpan ThrowIfZero(this TimeSpan parameter, string parameterName, string message = null)
+        public static TimeSpan ThrowIfZero(this TimeSpan parameter, string parameterName, string? message = null)
         {
             if (parameter == TimeSpan.Zero)
             {
@@ -77,7 +74,7 @@ namespace ValidDotNet
         /// <param name="parameter">the actual parameter</param>
         /// <param name="parameterName">the name of the parameter</param>
         /// <param name="message">a optional message instead of the default</param>
-        public static string ThrowIfNullOrWhitespace(this string parameter, string parameterName, string message = null)
+        public static string ThrowIfNullOrWhitespace(this string parameter, string parameterName, string? message = null)
         {
             if (string.IsNullOrWhiteSpace(parameter))
             {
@@ -98,11 +95,11 @@ namespace ValidDotNet
         /// <param name="parameterName">the name of the parameter</param>
         /// <param name="value">the value to check</param>
         /// <param name="message">a optional message instead of the default</param>
-        public static int ThrowIfLessOrEqual(this int parameter, string parameterName, int value, string message = null)
+        public static int ThrowIfLessOrEqual(this int parameter, string parameterName, int value, string? message = null)
         {
             if (parameter <= value)
             {
-                throw new ArgumentException(message ?? string.Format("Parameter is less or equal to {0}!", value), parameterName);
+                throw new ArgumentException(message ?? $"Parameter is less or equal to {value}!", parameterName);
             }
 
             return parameter;
@@ -118,7 +115,7 @@ namespace ValidDotNet
         /// <param name="parameter">the actual parameter</param>
         /// <param name="parameterName">the name of the parameter</param>
         /// <param name="message">a optional message instead of the default</param>
-        public static CancellationToken ThrowIfNone(this CancellationToken parameter, string parameterName, string message = null)
+        public static CancellationToken ThrowIfNone(this CancellationToken parameter, string parameterName, string? message = null)
         {
             if (parameter == CancellationToken.None)
             {
