@@ -36,7 +36,7 @@ public class ParameterValidationExtensionsTests
         var result = act.Should().Throw<ArgumentNullException>();
         result.Subject.First().Message.Should().Be("Message (Parameter 't')");
     }
-
+    
     #endregion
 
     #region TimeSpan
@@ -152,5 +152,25 @@ public class ParameterValidationExtensionsTests
         result.Subject.First().Message.Should().Be("Message (Parameter 't')");
     }
 
+    #endregion
+
+    #region Array
+
+    [Fact]
+    public void Array_ThrowIfNullOrEmpty_returns()
+    {
+        var t = new[]{"1","2"};
+        t.ThrowIfNullOrEmpty("t").Should().Equal(t);
+    }
+    
+    [Fact]
+    public void Array_customMessage_ThrowIfNullOrEmpty()
+    {
+        string[]? t = null;
+        Action act = () => t.ThrowIfNullOrEmpty("t", "Message");
+        var result = act.Should().Throw<ArgumentNullException>();
+        result.Subject.First().Message.Should().Be("Message (Parameter 't')");
+    }
+    
     #endregion
 }
