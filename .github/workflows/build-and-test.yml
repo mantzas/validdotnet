@@ -1,12 +1,12 @@
 name: build and test
 
-on:
-  push:
-  pull_request:
-    branches: [ main ]
-    paths:
-      - '**.cs'
-      - '**.csproj'
+#on:
+#  push:
+#  pull_request:
+#    branches: [ main ]
+#    paths:
+#      - '**.cs'
+#      - '**.csproj'
 
 jobs:
   build-and-test:
@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup .NET Core
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v2
         with:
           dotnet-version: '6.0.x'
 
