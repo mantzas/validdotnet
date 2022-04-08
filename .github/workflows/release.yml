@@ -1,0 +1,25 @@
+name: build and test
+
+on:
+  push:
+  pull_request:
+  release:
+    types:
+      - published
+
+jobs:
+  package_and_publish:
+
+    name: package_and_publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '6.0.x'
+    
+    - name: Create Release NuGet package
+      run: |
+        dotnet pack -v normal -c Release --include-symbols --include-source -p:PackageVersion=$VERSION -o nupkg ValidDotNet/ValidDotNet.csproj
+      
