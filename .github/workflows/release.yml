@@ -23,5 +23,5 @@ jobs:
       
       - name: Create Release NuGet package
         run: |
-          dotnet pack -v normal -c Release --include-symbols --include-source -p:PackageVersion=$VERSION -o nupkg ValidDotNet/ValidDotNet.csproj
+          dotnet pack -v normal -c Release --include-symbols --include-source -p:PackageVersion=1.0.0 -o nupkg ValidDotNet/ValidDotNet.csproj
       
