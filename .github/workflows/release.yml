@@ -1,7 +1,6 @@
 name: Package Nuget and Publish
 
 on:
-  pull_request:
   release:
     types:
       - published
