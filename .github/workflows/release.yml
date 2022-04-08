@@ -23,9 +23,10 @@ jobs:
       
       - name: Create Release NuGet package
         run: |
-          dotnet pack -v normal -c Release --include-symbols --include-source -p:PackageVersion=1.3.0 -o nupkg ValidDotNet/ValidDotNet.csproj
+          dotnet pack -v normal -c Release --include-symbols --include-source -p:PackageVersion=${{ github.event.release.tag_name }} -o nupkg ValidDotNet/ValidDotNet.csproj
       
       - name: Publish Nuget package
         run: |
-          dotnet nuget push nupkg/ValidDotNet.1.3.0.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}  --skip-duplicate
+          dotnet nuget push nupkg/ValidDotNet.${{ github.event.release.tag_name }}.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}  --skip-duplicate
 
+  
