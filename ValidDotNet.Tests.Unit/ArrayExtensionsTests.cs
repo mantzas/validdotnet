@@ -23,4 +23,3 @@ public class ArrayExtensionsTests
         result.Subject.First().Message.Should().Be("Message (Parameter 't')");
     }
 }
-

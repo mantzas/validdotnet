@@ -34,4 +34,3 @@ public class GenericExtensionsTests
         result.Subject.First().Message.Should().Be("Message (Parameter 't')");
     }
 }
-
